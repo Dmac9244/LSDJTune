@@ -39,7 +39,7 @@ LSDJ-Tune is a Perl script. Run it using 'perl LSDJTune.perl ...' with Perl inst
 
 `perl LSDJTune.perl -b A5 440 --cents 0,100,200,300,400,500,600,700,800,900,1000,1100,1200 --names C,C#,D,D#,E,F,F#,G,G#,A,A#,B -r lsdj.gb -o lsdj_12TET.gb` generates an LSDJ rom in 12TET using the standard (LSDJ) note names. Should be identical to the source ROM.
 
-`perl LSDJTune.perl -b A5 440 --cents 0,240,480,720,960,1200 --names U,V,X,Y,Z -r lsdj.gb -o lsdj_5edo.gb` is an example from another site. Starting at 440 hz, the script will generate this pentatonic scale upward and downward, and overwrite the name bank so that the names match the newly generated frequencies.
+`perl LSDJTune.perl -b A5 440 --cents 0,240,480,720,960,1200 --names U,V,X,Y,Z -r lsdj.gb -o lsdj_5edo.gb` is an example from another site. Using 440 Hz as a guide, the script will generate this pentatonic scale, and overwrite the name bank so that the names match the newly generated frequencies.
 
 An example of what "not" to do:
 
@@ -58,3 +58,8 @@ An example of what "not" to do:
 - `-b` only takes one of the standard note names, and can't take any newly generated ones.
 
 - `--cents` and `--ratio` start on the base note. 
+
+
+## Note
+
+Due to the limitations of the Game Boy hardware, the frequency table this script writes to the GB will always be out of tune. In fact, any scale one wishes to write will be out of tune, as the GB hardware isn't able to reproduce every possible frequency. The table the script outputs tells you how out of tune each note is going to be both in hertz and in cents. It kinda sucks, but I guess if you *really* need your chiptune to be in tune, you can do some post-processing with something like Melodyne which can work with Scala files for microtonal tuning, but I have personally found that I seem to prefer the naturally 'out of tune' sound.
