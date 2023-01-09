@@ -1,3 +1,9 @@
+
+1.5.1
+===============
+Fixed the search functions to search a greater span of the rom for the note name and tuning tables.
+The script should be forwards compatible (again) (again).
+
 1.5
 ===============
 Fixed the search functions and modified the code to fix errors caused by newer versions of LSDJ.
